@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="ALTERNATIVE_JRE_PATH" value="/Library/Java/JavaVirtualMachines/sapmachine-21.jdk/Contents/Home" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <envs>
+      <env name="ORS_TOKEN" value="eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjA1ZTRkM2ExNzM4OTQ0Mjc4NmQ4MDdlZGU5MmM1MzZkIiwiaCI6Im11cm11cjY0In0=" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="sap.sustainability.Main" />
+    <module name="co2-calculator.main" />
+    <option name="PROGRAM_PARAMETERS" value="--start Tehran --end Yazd --transportation-method diesel-car-medium" />
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="false" tasks="clean build shadowJar" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
+    </method>
+  </configuration>
+</component>
