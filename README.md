@@ -131,29 +131,31 @@ Your trip caused 770.5kg of CO2-equivalent.
 Your trip caused 328.9kg of CO2-equivalent.
 
 ./co2-calculator --start Hamburg --end Berilai --transportation-method diesel-car-medium 
-Business Error: An unexpected error occurred: No features found for city: Berilai.
+Business Error$ An unexpected error occurred: No features found for city: Berilai.
 
 ./co2-calculator --start Hamburg --end Berlin --transportation-method diesel-car-medium         
 Your trip caused 49.2kg of CO2-equivalent.
 
 ./co2-calculator --start "New yorkk" --end Berlin --transportation-method diesel-car-medium
-Business Error: An unexpected error occurred: A perfect match for city: New yorkk was not found. The closest match is: New York City.
+Business Error$ An unexpected error occurred: A perfect match for city: New yorkk was not found. The closest match is: New York City.
 
 ./co2-calculator  --end Berlin --transportation-method diesel-car-medium 
-Parse Error: Missing required option: '--start=<startCity>'
+Parse Error$ Missing required option: '--start=<startCity>'
 
 ./co2-calculator -s Heidelberg -e Berlin -tm=diesel-car-medium
 Your trip caused 109.6kg of CO2-equivalent.
 
 ./co2-calculator -s Heidelberg -e Berlin -tm=diesel-car-medium (with no internet) 
-Business Error: An unexpected error occurred: Failed to calculate emissions due to I/O error.
+Business Error$ An unexpected error occurred: Failed to calculate emissions due to I/O error.
 
 ./co2-calculator -s Heidelberg -e Berlin -tm=diesel-car-medium (with invalid API key)
-Business Error: An unexpected error occurred: Failed to fetch coordinates for city: Heidelberg, due to http error with status: 403.
+Business Error$ An unexpected error occurred: Failed to fetch coordinates for city: Heidelberg, due to http error with status: 403.
 
 ./co2-calculator -s Heidelberg -e Berlin -tm=diesel-car-medium
-Business Error: An unexpected error occurred: ORS_TOKEN environment variable is not set.
+Business Error$ An unexpected error occurred: ORS_TOKEN environment variable is not set.
 
+./co2-calculator --start "New York" --end Berlin --transportation-method diesel-car-medium
+Business Error$ An unexpected error occurred: No driving car path exists between the two locations.
 ```
 
 # Tools and Libraries Decisions

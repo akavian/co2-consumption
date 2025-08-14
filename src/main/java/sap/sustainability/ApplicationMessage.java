@@ -39,8 +39,8 @@ public final class ApplicationMessage {
 
   public static final String FAILED_TO_CALCULATE_EMISSIONS_FROM_TO_USING =
       "Failed to calculate emissions from {} to {} using {}: {}";
-  public static final String PARSE_ERROR_S = "Parse Error: %s";
-  public static final String BUSINESS_ERROR_S = "Business Error: %s";
+  public static final String PARSE_ERROR_S = "Parse Error$ %s";
+  public static final String BUSINESS_ERROR_S = "Business Error$ %s";
   public static final String NO_DRIVING_CAR_PATH_EXISTS =
       "No driving car path exists between the two locations.";
 }

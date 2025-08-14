@@ -7,7 +7,7 @@
     </envs>
     <option name="MAIN_CLASS_NAME" value="sap.sustainability.Main" />
     <module name="co2-calculator.main" />
-    <option name="PROGRAM_PARAMETERS" value="--start Tehran --end Yazd --transportation-method diesel-car-medium" />
+    <option name="PROGRAM_PARAMETERS" value="--start Berlin --end Hamburg --transportation-method diesel-car-medium" />
     <method v="2">
       <option name="Gradle.BeforeRunTask" enabled="false" tasks="clean build shadowJar" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
     </method>
