@@ -97,4 +97,25 @@ class HttpUtilityTest {
         RuntimeException.class,
         () -> httpUtility.fetchMatrix(new double[] {0, 0}, new double[] {3, 4}, "test-Key"));
   }
+
+  @Test
+  void testFetchMatrix_whenNoDrivingPathExists_throwsException() throws IOException {
+    Response responseMock =
+        new Response.Builder()
+            .request(new Request.Builder().url("http://test").build())
+            .protocol(Protocol.HTTP_1_1)
+            .code(200)
+            .message("")
+            .body(
+                ResponseBody.create(
+                    "{\"distances\":[[0,null]]}", MediaType.get("application/json")))
+            .build();
+
+    doReturn(callMock).when(httpClientMock).newCall(any());
+    doReturn(responseMock).when(callMock).execute();
+
+    assertThrows(
+        RuntimeException.class,
+        () -> httpUtility.fetchMatrix(new double[] {0, 0}, new double[] {3, 4}, "test-Key"));
+  }
 }

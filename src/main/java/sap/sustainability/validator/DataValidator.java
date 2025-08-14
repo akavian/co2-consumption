@@ -72,4 +72,21 @@ public class DataValidator {
           String.format(String.format(NO_PERFECT_MATCH_FOUND_FOR_CITY, city, cityNode.asText())));
     }
   }
+
+  /**
+   * Validates that the provided distance node exists, is in an array format, contains at least two
+   * elements, and that the second element is not null.
+   *
+   * @param distance the JSON node containing the distance data to validate
+   * @throws RuntimeException if the distance node is null, not an array, contains fewer than two
+   *     elements, or if the second element is null
+   */
+  public static void validateDistanceNodeExistsAndIsValid(JsonNode distance) {
+    if (distance == null
+        || !distance.isArray()
+        || distance.size() < 2
+        || distance.get(1).isNull()) {
+      throw new RuntimeException(String.format(NO_DRIVING_CAR_PATH_EXISTS));
+    }
+  }
 }

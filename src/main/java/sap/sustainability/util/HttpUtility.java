@@ -1,6 +1,7 @@
 package sap.sustainability.util;
 
 import static sap.sustainability.ApplicationMessage.*;
+import static sap.sustainability.validator.DataValidator.validateDistanceNodeExistsAndIsValid;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -103,6 +104,8 @@ public class HttpUtility {
       }
       JsonNode root = objectMapper.readTree(response.body().string());
       JsonNode distance = root.at("/distances/0");
+      validateDistanceNodeExistsAndIsValid(distance);
+
       return distance.get(1).asDouble();
     }
   }
