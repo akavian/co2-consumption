@@ -1,6 +1,13 @@
 package sap.sustainability.validator;
 
-import static sap.sustainability.ApplicationMessage.*;
+
+import static sap.sustainability.ApplicationMessage.CITY_NAME_CAN_ONLY_CONTAIN_LETTERS_AND_SPACES;
+import static sap.sustainability.ApplicationMessage.CITY_NAME_NULL_OR_EMPTY;
+import static sap.sustainability.ApplicationMessage.CITY_NODE_NOT_FOUND;
+import static sap.sustainability.ApplicationMessage.COORDINATES_NOT_FOUND;
+import static sap.sustainability.ApplicationMessage.NO_DRIVING_CAR_PATH_EXISTS;
+import static sap.sustainability.ApplicationMessage.NO_FEATURES_FOUND_FOR_CITY;
+import static sap.sustainability.ApplicationMessage.NO_PERFECT_MATCH_FOUND_FOR_CITY;
 
 import com.fasterxml.jackson.databind.JsonNode;
 

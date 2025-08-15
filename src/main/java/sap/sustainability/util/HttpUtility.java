@@ -1,6 +1,7 @@
 package sap.sustainability.util;
 
-import static sap.sustainability.ApplicationMessage.*;
+import static sap.sustainability.ApplicationMessage.FAILED_TO_FETCH_COORDINATES_FOR_CITY_DUE_TO_HTTP_ERROR_STATUS;
+import static sap.sustainability.ApplicationMessage.FAILED_TO_FETCH_MATRIX_WITH_RESPONSE_CODE;
 import static sap.sustainability.validator.DataValidator.validateDistanceNodeExistsAndIsValid;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
