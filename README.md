@@ -13,9 +13,16 @@ and we can create a native image of the application that can be executed on the 
 
 Third, we have given some examples of executing our CLI app with different parameters to showcase different scenarios.
 
-Please note that the API key is defined as and environment variable as ORS_TOKEN.
+### Attention
 
-Before progressing, please use `gradlew.bat` for windows users, and `./gradlew` for Unix based systems.
+* Please note that the project is using some libraries that work with annotation processing.
+  if you see class definitions are not found, please run `./gradlew clean build` command to ensure that the
+  annotation processing is done and extra classes are generated.
+* This project is using JDK 21, so please make sure that you have JDK 21 installed on your machine.
+  In case you are using sap machine JDK 21, which is a free and open-source JDK distribution,
+  as it does not have GraalVM available, GraalVM native image generation needs additional steps as described below.
+* Please note that the API key is defined as and environment variable as ORS_TOKEN.
+* Before progressing, please use `gradlew.bat` for windows users, and `./gradlew` for Unix based systems.
 
 ### Building the Project and Test Execution
 
@@ -200,7 +207,7 @@ Therefore, the allocated memory will by freed as opposed to a long running appli
 
 ### Checkstyle and Code Format
 
-We have adopted google code format for java: https://checkstyle.sourceforge.io/reports/google-java-style-20170228.html
+We have adopted google code format for java: https://checkstyle.sourceforge.io/reports/google-java-style-20170228.html.
 Also, we have made added the checkstyle validation for our project via checkstyle plugin in our gradle file and
 also added the corresponding checkstyle xml file at `./config/checkstyle/checkstyle.xml`.
 Then, when running the `./gradlew build` command,
