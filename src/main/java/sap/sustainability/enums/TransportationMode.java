@@ -45,22 +45,21 @@ public enum TransportationMode {
    *
    * @param mode received from command line
    * @return TransportationMode
-   * @throws IllegalArgumentException when there is no correspondence
+   * @throws RuntimeException when there is no correspondence
    */
   public static TransportationMode fromString(String mode) {
-    for (TransportationMode transportationMode : values()) {
-      if (transportationMode.mode.equalsIgnoreCase(mode)) {
-        return transportationMode;
-      }
-    }
 
-    throw new IllegalArgumentException(
-        String.format(
-            UNKNOWN_TRANSPORTATION_MODE_ALLOWED_VALUES_ARE,
-            mode,
-            Arrays.toString(
-                java.util.Arrays.stream(values())
-                    .map(TransportationMode::getMode)
-                    .toArray(String[]::new))));
+    try {
+      return valueOf(mode);
+    } catch (IllegalArgumentException e) {
+      throw new RuntimeException(
+          String.format(
+              UNKNOWN_TRANSPORTATION_MODE_ALLOWED_VALUES_ARE,
+              mode,
+              Arrays.toString(
+                  Arrays.stream(values())
+                      .map(TransportationMode::getMode)
+                      .toArray(String[]::new))));
+    }
   }
 }
