@@ -3,6 +3,7 @@ package sap.sustainability.enums;
 import static sap.sustainability.ApplicationMessage.UNKNOWN_TRANSPORTATION_MODE_ALLOWED_VALUES_ARE;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 /**
  * Enumeration of transportation modes available for CO2 emission calculations. Represents different
@@ -49,17 +50,20 @@ public enum TransportationMode {
    */
   public static TransportationMode fromString(String mode) {
 
-    try {
-      return valueOf(mode);
-    } catch (IllegalArgumentException e) {
-      throw new RuntimeException(
-          String.format(
-              UNKNOWN_TRANSPORTATION_MODE_ALLOWED_VALUES_ARE,
-              mode,
-              Arrays.toString(
-                  Arrays.stream(values())
-                      .map(TransportationMode::getMode)
-                      .toArray(String[]::new))));
-    }
+    Optional<TransportationMode> transportationModeOptional =
+        Arrays.stream(values())
+            .filter(transportationMode -> transportationMode.mode.equalsIgnoreCase(mode))
+            .findAny();
+
+    return transportationModeOptional.orElseThrow(
+        () ->
+            new RuntimeException(
+                String.format(
+                    UNKNOWN_TRANSPORTATION_MODE_ALLOWED_VALUES_ARE,
+                    mode,
+                    Arrays.toString(
+                        Arrays.stream(values())
+                            .map(TransportationMode::getMode)
+                            .toArray(String[]::new)))));
   }
 }
