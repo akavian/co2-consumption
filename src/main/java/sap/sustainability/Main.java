@@ -23,9 +23,7 @@ public class Main {
     commandLine.execute(args);
     Double result = commandLine.getExecutionResult();
     if (result != null) {
-      System.out.printf(RESULT_EMISSIONS_FOR_TRIP, result);
-    } else {
-      System.out.println("Something went wrong. No emissions calculated.");
+      commandLine.getOut().printf(RESULT_EMISSIONS_FOR_TRIP, result);
     }
   }
 }

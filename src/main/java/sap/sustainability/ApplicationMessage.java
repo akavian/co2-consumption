@@ -43,4 +43,6 @@ public final class ApplicationMessage {
   public static final String BUSINESS_ERROR_S = "Business Error$ %s";
   public static final String NO_DRIVING_CAR_PATH_EXISTS =
       "No driving car path exists between the two locations.";
+  public static final String AVAILABLE_PLEASE_CHECK_THE_COMMAND_AND_TRY_AGAIN_N =
+      "No result available. Please check the command and try again.%n";
 }
