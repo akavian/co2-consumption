@@ -24,8 +24,7 @@ class TransportationModeConverterTest {
   @Test
   void testConvert_whenInvalidTransportationMode_throwsException() {
     TransportationModeConverter converter = new TransportationModeConverter();
-    IllegalArgumentException exception =
-        assertThrows(IllegalArgumentException.class, () -> converter.convert("INVALID_MODE"));
+    assertThrows(IllegalArgumentException.class, () -> converter.convert("INVALID_MODE"));
   }
 
   @Test
