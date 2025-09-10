@@ -57,7 +57,7 @@ public enum TransportationMode {
 
     return transportationModeOptional.orElseThrow(
         () ->
-            new RuntimeException(
+            new IllegalArgumentException(
                 String.format(
                     UNKNOWN_TRANSPORTATION_MODE_ALLOWED_VALUES_ARE,
                     mode,
