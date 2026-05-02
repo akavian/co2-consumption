@@ -1,15 +1,13 @@
 package ali.sustainability.command;
 
-import jakarta.inject.Inject;
-
-import java.util.concurrent.Callable;
-
-import picocli.CommandLine.Command;
-import picocli.CommandLine.Option;
 import ali.sustainability.converter.TransportationModeConverter;
-import ali.sustainability.enums.TransportationMode;
 import ali.sustainability.service.Co2Calculator;
 import ali.sustainability.validator.DataValidator;
+import jakarta.inject.Inject;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+
+import java.util.concurrent.Callable;
 
 /**
  * The Co2Command class provides command-line functionality for calculating CO2 emissions based on
@@ -23,7 +21,7 @@ public class Co2Command implements Callable<Double> {
 
     private String startCity;
     private String endCity;
-    private TransportationMode transportationMode;
+    private Integer transportationModeEmission;
 
     private final Co2Calculator co2Calculator;
 
@@ -44,7 +42,7 @@ public class Co2Command implements Callable<Double> {
      */
     @Override
     public Double call() {
-        return co2Calculator.calculateEmissions(startCity, endCity, transportationMode);
+        return co2Calculator.calculateEmissions(startCity, endCity, transportationModeEmission);
     }
 
     /**
@@ -88,7 +86,7 @@ public class Co2Command implements Callable<Double> {
             required = true,
             description = "The mode of transportation for the CO2 calculation.",
             converter = TransportationModeConverter.class)
-    private void setTransportationMode(TransportationMode transportationMode) {
-        this.transportationMode = transportationMode;
+    private void setTransportationMode(Integer transportationModeEmission) {
+        this.transportationModeEmission = transportationModeEmission;
     }
 }

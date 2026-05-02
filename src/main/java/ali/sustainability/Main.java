@@ -1,9 +1,9 @@
 package ali.sustainability;
 
-import static ali.sustainability.ApplicationMessage.RESULT_EMISSIONS_FOR_TRIP;
-
+import ali.sustainability.di.DaggerCommandLineComponent;
 import picocli.CommandLine;
-import sap.sustainability.di.DaggerCommandLineComponent;
+
+import static ali.sustainability.ApplicationMessage.RESULT_EMISSIONS_FOR_TRIP;
 
 /**
  * The entry point of the CO2 Calculator application. This class initializes and executes the

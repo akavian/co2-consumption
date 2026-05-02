@@ -1,24 +1,25 @@
 package ali.sustainability.converter;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import ali.sustainability.enums.TransportationMode;
 import org.junit.jupiter.api.Test;
-import sap.sustainability.enums.TransportationMode;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TransportationModeConverterTest {
 
     @Test
     void testConvert_whenValidTransportationMode() {
         TransportationModeConverter converter = new TransportationModeConverter();
-        TransportationMode result = converter.convert("bus-default");
-        assertEquals(TransportationMode.BUS_DEFAULT, result);
+        Integer result = converter.convert("bus-default");
+        assertEquals(TransportationMode.BUS_DEFAULT.getEmission(), result);
     }
 
     @Test
     void testConvert_whenValidTransportationModeCaseInsensitive() {
         TransportationModeConverter converter = new TransportationModeConverter();
-        TransportationMode result = converter.convert("BUS-default");
-        assertEquals(TransportationMode.BUS_DEFAULT, result);
+        Integer result = converter.convert("BUS-default");
+        assertEquals(TransportationMode.BUS_DEFAULT.getEmission(), result);
     }
 
     @Test

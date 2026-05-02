@@ -1,10 +1,10 @@
 package ali.sustainability.di;
 
+import ali.sustainability.service.Co2Calculator;
+import ali.sustainability.service.impl.Co2CalculatorImpl;
 import dagger.Binds;
 import dagger.Module;
 import jakarta.inject.Singleton;
-import ali.sustainability.service.Co2Calculator;
-import ali.sustainability.service.impl.Co2CalculatorImpl;
 
 /**
  * Dagger module for binding the Co2Calculator interface to its implementation.

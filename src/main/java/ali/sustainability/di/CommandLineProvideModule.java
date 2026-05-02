@@ -1,16 +1,16 @@
 package ali.sustainability.di;
 
-import dagger.Module;
-import dagger.Provides;
-import jakarta.inject.Singleton;
-import okhttp3.OkHttpClient;
-import picocli.CommandLine;
 import ali.sustainability.command.Co2Command;
 import ali.sustainability.handler.BusinessExceptionHandler;
 import ali.sustainability.handler.ParameterExceptionHandler;
 import ali.sustainability.service.Co2Calculator;
 import ali.sustainability.util.Environment;
 import ali.sustainability.util.HttpUtility;
+import dagger.Module;
+import dagger.Provides;
+import jakarta.inject.Singleton;
+import okhttp3.OkHttpClient;
+import picocli.CommandLine;
 
 /**
  * Dagger module that provides core dependencies for the command layer.
